@@ -16,6 +16,7 @@ $(document).ready(function () {
 					var chk = getQuerystring('symbol')
 					chk = chk.toUpperCase();
 					var i, name= "";
+					var i, rank= 0;
 					var i, price_btc= 0;
 					var i, price_krw= 0;
 					var i, price_usd= 0;
@@ -24,6 +25,7 @@ $(document).ready(function () {
 					for (i = 0; i < 100; i++) { 
 					if(result[i].symbol == chk){
 					name = result[i].name;
+					rank = Number(result[i].rank);
 					price_btc = Number(result[i].price_btc);
 					price_krw = Number(result[i].price_krw);
 					price_usd = Number(result[i].price_usd);
@@ -32,12 +34,11 @@ $(document).ready(function () {
 					}
 					
 					}
-					    document.body.append(name+":");
-						document.body.append(price_btc+":");
-						document.body.append(price_krw.toFixed(2)+"원:");
-						document.body.append("$"+price_usd.toFixed(4)+":");
-						document.body.append(percent_change_1h+"%:");
-						document.body.append(percent_change_24h+"%");
+					var tag ="(coinmarketcap기준)<br>"+name+"("+rank+"위)<br>USD : $"
+					+price_usd.toFixed(4)+"("+percent_change_1h+"%)<br>BTC : "
+					+price_btc+"<br>KRW : "+price_krw.toFixed(2)+"원<br> 24시간전 ("+percent_change_24h+"%)";
+					$("#target").html(tag);
+					
                 },
             error: function(err){
                 alert(err);
@@ -60,7 +61,7 @@ var _tempArray = _tempUrl.split('&');
 </head>
 <body>
 
-
+<div id="target"></div>
 
 
 
