@@ -1,4 +1,5 @@
-		$.ajax({
+$(document).ready(function () {		
+$.ajax({
                 type: "GET",
                 url: "https://api.coinmarketcap.com/v1/ticker/?convert=KRW",
 				contentType: 'application/x-www-form-urlencoded, charset=utf-8',
