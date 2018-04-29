@@ -2,8 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>AJAX</title>
-<script type="text/javascript" src="https://coinmarketcap.co.kr/plugin/editor/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function () {
 				$.ajax({
@@ -12,6 +11,7 @@ $(document).ready(function () {
 				contentType: 'application/x-www-form-urlencoded, charset=utf-8',
                 dataType: "json",
                 success: function(result){
+      \
 					var chk = getQuerystring('symbol')
 					chk = chk.toUpperCase();
 					var i, name= "";
@@ -46,11 +46,12 @@ $(document).ready(function () {
         return false;
 	});
 function getQuerystring(paramName){ 
-var _tempUrl = window.location.search.substring(1);
-var _tempArray = _tempUrl.split('&');
+var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제 
+var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기 
   for(var i = 0; _tempArray.length; i++) {
-	 var _keyValuePair = _tempArray[i].split('=');
-	 if(_keyValuePair[0] == paramName){ 
+	 var _keyValuePair = _tempArray[i].split('='); // '=' 을 기준으로 분리하기 
+	 if(_keyValuePair[0] == paramName){ // _keyValuePair[0] : 파라미터 명 
+	 // _keyValuePair[1] : 파라미터 값 
 	 return _keyValuePair[1]; 
 	 } 
   } 
