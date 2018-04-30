@@ -4,24 +4,12 @@
 <title>AJAX</title>
 
 <!-- Global site tag (gtag.js) - Google Analytics --> 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-6341982-1"></script> 
-<script>
-
-window.dataLayer = window.dataLayer || [];
-
-function gtag(){dataLayer.push(arguments);}
-
-gtag('js', new Date());
-
-
-
-gtag('config', 'UA-6341982-1');
-
-</script> 
+<script type="text/javascript" src="https://boy9999.github.io/jquery.ajax-cross-origin.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function () {
 		$.ajax({
+		crossOrigin: true,
                 type: "GET",
                 url: "https://api.coinmarketcap.com/v1/ticker/?convert=KRW",
 				contentType: 'application/x-www-form-urlencoded, charset=utf-8',
