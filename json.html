@@ -4,12 +4,10 @@
 <title>AJAX</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://bot9999.github.io/jquery.ajax-cross-origin.min.js"></script>
 <script>
 $(document).ready(function () {
 
 		$.ajax({
-		crossOrigin: true,
                 type: "GET",
                 url: "https://api.coinmarketcap.com/v1/ticker/?convert=KRW",
                 dataType: "json",
