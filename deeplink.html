@@ -1,0 +1,47 @@
+<html> 
+
+<body> 
+
+<script> 
+
+    var currentOS = "else"; 
+
+    var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase())); 
+
+    if (mobile) { 
+
+        var userAgent = navigator.userAgent.toLowerCase(); 
+
+        if (userAgent.search("android") > -1) 
+
+            currentOS = "android"; 
+
+        else if ((userAgent.search("iphone") > -1) || (userAgent.search("ipod") > -1) || (userAgent.search("ipad") > -1)) 
+
+            currentOS = "ios"; 
+
+        else 
+
+            currentOS = "else"; 
+
+    } 
+
+    if(currentOS == "android"){ 
+
+        // Android 
+
+    window.open("intent://www.alchemist-republic.com/kr#Intent;scheme=http;package=com.android.chrome;end"); 
+
+    }else if(currentOS == "ios"){ 
+
+        // IOS 
+
+        window.open("googlechrome:////www.alchemist-republic.com/kr"); 
+
+    } 
+
+</script> 
+
+</body> 
+
+</html>
