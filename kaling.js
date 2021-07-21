@@ -20,7 +20,7 @@ exports.Kakao = function() {
     Kakao.prototype.static = {
         ua: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
         ct: 'application/x-www-form-urlencoded',
-        ka: 'sdk/1.36.6 os/javascript lang/en-US device/Win32 origin/http%3A%2F%2Flt2.kr'
+        ka: 'sdk/1.36.6 os/javascript lang/en-US device/Win32 origin/https%3A%2F%2Fbluebaikal.io'
     };
     Kakao.prototype.login = function(id, password) {
         if(!this.isInitialized()) throw new ReferenceError('method login is called before initialization');
